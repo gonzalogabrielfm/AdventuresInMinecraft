@@ -1,3 +1,6 @@
+
+[![codecov](https://codecov.io/github/gonzalogabrielfm/AdventuresInMinecraft/graph/badge.svg?token=TXQUM9PX0D)](https://codecov.io/github/gonzalogabrielfm/AdventuresInMinecraft)
+
 # Windows PC Starter Kit
 
 Martin O'Hanlon

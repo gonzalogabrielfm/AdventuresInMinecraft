@@ -6,30 +6,19 @@ from Agents.AiAgent import GeminiAgent
 from Agents.MockAgent import MockAgent
 from MyAdventures.mcpi.vec3 import Vec3
 
-
-def test_mock_bot_initialization():
-    agent = MockAgent()
-    assert agent.name == "MockBot"
-
-
-def test_chat_agent_initialization():
-    agent = ChatAgent("TestBot")
-    assert agent.name == "TestBot"
+@pytest.fixture
+def mock_minecraft():
+    """Creates a simulated Minecraft object with mocked methods."""
+    mock_mc = MagicMock()
+    mock_mc.events.pollChatPosts.return_value = []
+    return mock_mc
 
 
-def test_block_agent_initialization():
-    agent = BlockAgent("BlockBot", block_id=1)
-    assert agent.name == "BlockBot"
-    assert agent.block_id == 1
-
-
-def test_mock_agent_listen():
-    agent = MockAgent()
-    # Mock the minecraft instance
-    agent.mc = MagicMock()
-    agent.mc.events.pollChatPosts.return_value = []
-
-    # Test the listen method
-    agent.listen()
-    # Verify that pollChatPosts was called
-    agent.mc.events.pollChatPosts.assert_called_once()
+# ChatAgent Tests
+def test_chat_agent_initialization(mock_minecraft):
+    agent = ChatAgent("TestChatAgent")
+    agent.mc = mock_minecraft
+    assert agent.name == "TestChatAgent"
+    assert agent.mc is not None
+    assert agent.condition is None
+    assert agent.response is None

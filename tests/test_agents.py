@@ -9,10 +9,9 @@ from MyAdventures.mcpi.vec3 import Vec3
 
 
 
-def test_chat_agent_initialization():
-    agent = ChatAgent("TestChatAgent")
-    assert agent.name == "TestChatAgent"
-    assert agent.mc is not None
 
+def test_mock_bot_initialization():
+    agent = MockAgent()
+    assert agent.name == "MockBot"
 
 

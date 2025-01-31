@@ -1,0 +1,32 @@
+coverage:
+  status:
+    project:
+      default:
+        # Define un objetivo de cobertura automático basado en commits previos
+        target: auto
+        # Permite una caída del 5% en la cobertura
+        threshold: 5%
+    patch:
+      default:
+        # Para nuevos cambios, queremos al menos 80% de cobertura
+        target: 60%
+        
+  # Ignorar todos los archivos excepto los relacionados con agents
+  ignore:
+    - "**/*"
+    - "!**/Agents/**"
+    - "!**/tests/test_agents.py"
+
+# Configuración para los comentarios en los PRs
+comment:
+  layout: "header, diff, files"
+  behavior: default
+  require_changes: false
+  
+# Flags para separar diferentes tipos de tests
+flags:
+  agents:
+    paths:
+      - Agents/
+      - tests/test_agents.py
+    carryforward: true

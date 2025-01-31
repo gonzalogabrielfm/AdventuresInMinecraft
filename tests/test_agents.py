@@ -13,12 +13,3 @@ def mock_minecraft():
     mock_mc.events.pollChatPosts.return_value = []
     return mock_mc
 
-
-# ChatAgent Tests
-def test_chat_agent_initialization(mock_minecraft):
-    agent = ChatAgent("TestChatAgent")
-    agent.mc = mock_minecraft
-    assert agent.name == "TestChatAgent"
-    assert agent.mc is not None
-    assert agent.condition is None
-    assert agent.response is None

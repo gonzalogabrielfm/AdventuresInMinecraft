@@ -1,32 +1,31 @@
+codecov:
+  require_ci_to_pass: yes
+
 coverage:
+  precision: 2
+  round: down
+  range: "30...100"
+
   status:
     project:
       default:
-        # Define un objetivo de cobertura automático basado en commits previos
         target: auto
-        # Permite una caída del 5% en la cobertura
-        threshold: 5%
+        threshold: 0%
     patch:
       default:
-        # Para nuevos cambios, queremos al menos 80% de cobertura
-        target: 60%
-        
-  # Ignorar todos los archivos excepto los relacionados con agents
-  ignore:
-    - "**/*"
-    - "!**/Agents/**"
-    - "!**/tests/test_agents.py"
+        target: auto
+        threshold: 0%
+    changes: no
 
-# Configuración para los comentarios en los PRs
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
 comment:
-  layout: "header, diff, files"
+  layout: "reach,diff,flags,files,footer"
   behavior: default
-  require_changes: false
-  
-# Flags para separar diferentes tipos de tests
-flags:
-  agents:
-    paths:
-      - Agents/
-      - tests/test_agents.py
-    carryforward: true
+  require_changes: no

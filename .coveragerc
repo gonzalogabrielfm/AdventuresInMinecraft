@@ -1,6 +1,6 @@
 [run]
 source = Agents
-omit = 
+omit =
     */tests/*
     */__init__.py
 

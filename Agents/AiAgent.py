@@ -9,6 +9,7 @@ from typing import Optional
 from Agents.ChatAgent import ChatAgent
 
 
+
 class AiAgent(ChatAgent):
     def __init__(self, name: str, context: str):
         super().__init__(name)

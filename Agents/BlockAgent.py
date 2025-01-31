@@ -4,6 +4,7 @@ from MyAdventures.mcpi.vec3 import Vec3
 from Agents.AbstractAgent import AbstractAgent
 
 
+
 class BlockAgent(AbstractAgent):
     def __init__(self, name: str, block_id: int, block_data: int = 0):
         super().__init__(name)

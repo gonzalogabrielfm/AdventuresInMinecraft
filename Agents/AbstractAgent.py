@@ -8,6 +8,7 @@ from typing import Tuple, Optional
 from MyAdventures.mcpi.minecraft import Minecraft
 
 
+
 class AbstractAgent(ABC):
     def __init__(self, name: str):
         self.name: str = name

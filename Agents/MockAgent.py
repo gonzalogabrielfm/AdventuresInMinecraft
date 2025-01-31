@@ -1,6 +1,7 @@
 from Agents.ChatAgent import ChatAgent
 
 
+
 class MockAgent(ChatAgent):
     def __init__(self, name: str = "MockBot"):
         super().__init__(name)

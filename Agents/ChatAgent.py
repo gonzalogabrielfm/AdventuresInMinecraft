@@ -1,5 +1,6 @@
 from Agents.AbstractAgent import AbstractAgent
 
+
 class ChatAgent(AbstractAgent):
     def __init__(self, name: str):
         super().__init__(name)

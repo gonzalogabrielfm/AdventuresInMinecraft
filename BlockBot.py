@@ -2,7 +2,7 @@ from typing import Optional
 from time import sleep
 import random
 from MyAdventures.mcpi.vec3 import Vec3
-from Agents.BotAgent import BlockAgent
+from Agents.BlockAgent import BlockAgent
 
 
 class MinecraftBlockBot:
